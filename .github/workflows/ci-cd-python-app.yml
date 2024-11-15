@@ -104,8 +104,12 @@ jobs:
       uses: google-github-actions/setup-gcloud@v2
 
     - name: Get the GKE credentials so we can deploy to the cluster
-      run: |
-        gcloud container clusters get-credentials "$GKE_CLUSTER" --region "$GKE_REGION"
+      uses: 'google-github-actions/get-gke-credentials@v2'
+      with:
+        cluster_name: '$GKE_CLUSTER'
+        location: '$GKE_REGION'
+      # run: |
+      #   gcloud container clusters get-credentials "$GKE_CLUSTER" --region "$GKE_REGION"
 
     - name: Create namespace & set in Kustomize
       run: |
