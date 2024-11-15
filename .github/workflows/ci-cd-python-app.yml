@@ -108,8 +108,6 @@ jobs:
       with:
         cluster_name: ${{ env.GKE_CLUSTER }}
         location: ${{ env.GKE_REGION }}
-      # run: |
-      #   gcloud container clusters get-credentials "$GKE_CLUSTER" --region "$GKE_REGION"
 
     - name: Create namespace & set in Kustomize
       run: |
@@ -146,11 +144,6 @@ jobs:
       run: |
         kubectl apply -k k8s/ 
    
-    # DO SOME CHECKS HERE BEFORE COMMIT
-    #- name: Deploy updated Kubernetes resources
-    #  run: |
-    #    kubectl apply -k k8s/
-
     # REMOVE OLD DEPLOYMENT!!
     - name: Remove old namespace
       run: |
