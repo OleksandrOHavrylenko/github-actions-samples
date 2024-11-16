@@ -8,4 +8,4 @@ namespace: hello-gitops
 images:
 - name: hello-gitops
   newName: ogavrylenko/hello-gitops
-  newTag: 06dccee5090aaba32017986d265e9bf311d7ec87
+  newTag: fedefb4ae4c2ff66928cf467e7dcc74040d98dac
